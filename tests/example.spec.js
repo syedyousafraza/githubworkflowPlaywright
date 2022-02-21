@@ -43,8 +43,6 @@ test.describe('New Todo', () => {
 
     // Check that input is empty.
     await expect(page.locator('.new-todo')).toBeEmpty();
-
-
     await checkNumberOfTodosInLocalStorage(page, 1);
   });
 
