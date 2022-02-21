@@ -42,11 +42,7 @@ test.describe('New Todo', () => {
     await page.locator('.new-todo').press('Enter');
 
     // Check that input is empty.
-   // await expect(page.locator('.new-todo')).toBeEmpty();
-    await expect(page.locator('.new-todo')).toBeLessThan(2);
-
-
-
+    await expect(page.locator('.new-todo')).toBeEmpty();
     await checkNumberOfTodosInLocalStorage(page, 1);
   });
 
