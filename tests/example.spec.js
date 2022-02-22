@@ -3,13 +3,18 @@ const { test, expect } = require('@playwright/test');
 //adding test Just to test
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://google.com');
+  await page.goto('https://www.wikipedia.org/');
 });
 
 
 
-test.describe('Google Search', () => {
-  test('should allow me to add todo items', async ({ page }) => {
-    await expect(page.locator('body > div.L3eUgb > div.o3j99.LLD4me.yr19Zb.LS8OJ > div > img')).toBeVisible();
+test.describe('wikipedia page test', () => {
+  test('verify wikipedia open and loads successfully', async ({ page }) => {
+
+    await expect(page.locator('#searchInput')).toBeVisible();
+ //   await page.screenshot({ path: 'landing.png', fullPage: true });
+ //   expect(await page.screenshot()).toMatchSnapshot('landing.png');
+
+
   });
 });
